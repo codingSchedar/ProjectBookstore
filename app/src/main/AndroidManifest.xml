@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.app.projectbookstore">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Projectbookstore">
+        <activity
+            android:name=".AdminProductDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminItemsListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminUserProductsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminNewOrdersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminAddNewProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfirmFinalOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProductDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StudentHomeScreenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminHomeScreenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">projectbookstore</string>
+    <string name="home">Home</string>
+    <string name="cart">Cart</string>
+    <string name="profile">Profile</string>
+    <string name="categories">Categories</string>
+    <string name="logout">Logout</string>
+    <string name="orders">Orders</string>
+    <string name="add_item">Add Item</string>
+    <string name="adminProfile">Profile</string>
+</resources>
