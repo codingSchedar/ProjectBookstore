@@ -7,7 +7,30 @@
     tools:context=".AdminAddNewProductActivity"
     android:background="@color/white">
 
+    <RelativeLayout
+        android:id="@+id/r1111"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/tart"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="20dp"
+        >
+
+        <TextView
+            android:id="@+id/addNewItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Add New Product"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+
+            />
+    </RelativeLayout>
+
     <ImageView
+        android:layout_below="@id/r1111"
         android:id="@+id/select_product_image"
         android:layout_width="350dp"
         android:layout_height="200dp"

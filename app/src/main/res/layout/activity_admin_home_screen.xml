@@ -90,45 +90,86 @@
         app:layout_constraintVertical_bias="1.0">
 
         <RelativeLayout
-            android:layout_margin="5dp"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
 
             <ImageView
                 android:id="@+id/books"
+                android:layout_marginBottom="12dp"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginBottom="15dp"
-                android:background="@color/tart"
+                android:background="@drawable/categories_icon_background"
+                android:padding="18dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_books" />
 
+            <TextView
+                android:id="@+id/txtBooksCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="34dp"
+                android:layout_toRightOf="@+id/books"
+                android:text="Books"
+                android:textColor="@android:color/black"
+                android:textSize="22sp" />
+
             <ImageView
-                android:id="@+id/uniforms"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginBottom="15dp"
-                android:layout_toRightOf="@id/books"
-                android:src="@drawable/ic_uniforms"
-                android:background="@color/tart"/>
+                    android:layout_marginBottom="12dp"
+                    android:layout_below="@+id/books"
+                    android:id="@+id/uniforms"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/categories_icon_background"
+                    android:padding="18dp"
+                    android:src="@drawable/ic_uniforms"
+                    tools:layout_editor_absoluteX="151dp" />
+
+
+            <TextView
+                android:id="@+id/txtUniformsCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="144dp"
+                android:layout_toRightOf="@id/uniforms"
+                android:text="Uniforms"
+                android:textColor="@android:color/black"
+                android:textSize="22sp"
+                tools:layout_editor_absoluteX="155dp"
+                tools:layout_editor_absoluteY="120dp" />
 
             <ImageView
                 android:id="@+id/others"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginBottom="15dp"
+                android:layout_below="@+id/uniforms"
+                android:layout_marginLeft="-99dp"
+                android:layout_marginTop="4dp"
                 android:layout_toRightOf="@id/uniforms"
+                android:background="@drawable/categories_icon_background"
+                android:padding="18dp"
                 android:src="@drawable/ic_merchandise"
-                android:background="@color/tart" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/uniforms" />
 
+            <TextView
+                android:id="@+id/txtMerchandiseCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="110dp"
+                android:layout_marginTop="263dp"
+                android:text="Merchandise"
+                android:textColor="@android:color/black"
+                android:textSize="22sp"
+                tools:layout_editor_absoluteX="257dp"
+                tools:layout_editor_absoluteY="100dp" />
         </RelativeLayout>
 
     </ScrollView>
