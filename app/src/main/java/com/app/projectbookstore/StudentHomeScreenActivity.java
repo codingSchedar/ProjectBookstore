@@ -35,7 +35,7 @@ import java.util.ArrayList;
     private TextView txtCurrentUser;
     private BottomNavigationView bottomNavigationView;
     ProductAdapter productAdapter;
-    ArrayList<Products> productsArrayList;
+    ArrayList<Products> productsArrayList, sortedProductsByPrice;
     private SearchView searchView;
 
     @Override
@@ -52,6 +52,11 @@ import java.util.ArrayList;
         productsArrayList = new ArrayList<>();
         productAdapter = new ProductAdapter(this, productsArrayList, this);
         recyclerView.setAdapter(productAdapter);
+
+        for(Products products : productsArrayList)
+        {
+
+        }
 
 
 

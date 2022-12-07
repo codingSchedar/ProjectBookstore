@@ -8,7 +8,7 @@
     android:layout_marginStart="15dp"
     android:layout_marginEnd="15dp"
     app:cardElevation="15dp"
-    android:background="@color/white"
+    android:background="@color/tart"
     >
     <RelativeLayout
         android:layout_width="match_parent"

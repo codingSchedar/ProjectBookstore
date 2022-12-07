@@ -49,7 +49,7 @@
             android:layout_height="30dp"
             android:layout_marginEnd="15dp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_menu"
+            android:src="@drawable/ic_smile"
             app:tint="@color/white"
             app:layout_constraintBottom_toBottomOf="@id/txtAdminHello"
             app:layout_constraintEnd_toEndOf="parent"
@@ -102,23 +102,32 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="15dp"
                 android:layout_marginBottom="15dp"
+                android:background="@color/tart"
                 android:src="@drawable/ic_books" />
 
             <ImageView
                 android:id="@+id/uniforms"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_margin="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
                 android:layout_toRightOf="@id/books"
-                android:src="@drawable/ic_uniforms" />
+                android:src="@drawable/ic_uniforms"
+                android:background="@color/tart"/>
 
             <ImageView
                 android:id="@+id/others"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_margin="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
                 android:layout_toRightOf="@id/uniforms"
-                android:src="@drawable/ic_merchendise" />
+                android:src="@drawable/ic_merchandise"
+                android:background="@color/tart" />
 
         </RelativeLayout>
 
@@ -128,7 +137,7 @@
         android:id="@+id/adminBottomNavView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/red"
+        android:background="@color/tart"
         app:itemIconSize="30dp"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"

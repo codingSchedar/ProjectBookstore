@@ -66,15 +66,13 @@
         android:id="@+id/admin_profile_image_change_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change Profile"
-        android:textSize="17sp"
-        android:textStyle="bold"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="4dp"
-        android:textColor="@android:color/black"
         android:layout_below="@+id/admin_settings_profile_image"
         android:layout_centerHorizontal="true"
-        />
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="10dp"
+        android:text="Change Profile"
+        android:textColor="@android:color/black"
+        android:textSize="15sp" />
 
     <EditText
         android:id="@+id/admin_settings_full_name"
@@ -99,16 +97,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/admin_settings_full_name"
-        android:inputType="textEmailAddress"
-        android:layout_margin="15dp"
-        android:padding="10dp"
-        android:hint="Email"
+        android:layout_marginStart="15dp"
         android:layout_marginLeft="45dp"
+        android:layout_marginEnd="15dp"
         android:layout_marginRight="45dp"
+        android:layout_marginBottom="15dp"
         android:background="@drawable/input_design"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:padding="10dp"
         android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        />
+        android:textColorHint="@color/black" />
 
     <Button
         android:id="@+id/admin_btnLogout"
@@ -119,6 +118,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
+        android:background="@drawable/button_background"
         android:backgroundTint="@color/tart"
         android:text="Logout"
         android:textColor="@color/white"

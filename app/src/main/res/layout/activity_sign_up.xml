@@ -128,28 +128,30 @@
     </LinearLayout>
 
     <Button
-        android:layout_below="@+id/linearLayout5"
         android:id="@+id/btnSignUp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout5"
         android:layout_marginTop="52dp"
+        android:background="@drawable/button_background"
         android:backgroundTint="@color/tart"
         android:text="SIGN UP"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="22dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
 
     <TextView
-        android:layout_below="@+id/btnSignUp"
         android:id="@+id/txtBackToLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/btnSignUp"
         android:clickable="true"
         android:padding="5sp"
         android:text="BACK TO LOGIN"
         android:textAlignment="center"
+        android:textSize="18dp"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

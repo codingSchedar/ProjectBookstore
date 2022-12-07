@@ -49,7 +49,7 @@
             android:layout_height="30dp"
             android:layout_marginEnd="15dp"
             android:contentDescription="@string/app_name"
-            android:src="@drawable/ic_menu"
+            android:src="@drawable/ic_smile"
             app:tint="@color/white"
             app:layout_constraintBottom_toBottomOf="@id/txtHello"
             app:layout_constraintEnd_toEndOf="parent"
