@@ -55,6 +55,8 @@
     <ImageView
         android:id="@+id/settings_profile_image"
         android:layout_width="130dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/input_design"
         android:layout_height="130dp"
         android:layout_below="@+id/app_bar_settings"
         android:layout_centerHorizontal="true"
