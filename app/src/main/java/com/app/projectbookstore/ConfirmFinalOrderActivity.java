@@ -24,6 +24,8 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
 
@@ -46,22 +48,73 @@ public class ConfirmFinalOrderActivity extends AppCompatActivity {
 
         btnConfirmOrder.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view)
+            {
                 Check();
             }
         });
     }
 
-    private void Check() {
-        if(TextUtils.isEmpty(nameEditText.getText().toString())){
-            Toast.makeText(this,"Please Provide Your Full Name",Toast.LENGTH_SHORT).show();
+    private void Check()
+    {
+        String fullName = nameEditText.getText().toString();
+        String contact = phoneEditText.getText().toString();
+
+        if(TextUtils.isEmpty(fullName) || fullName.length() < 10){
+            Toast.makeText(this,"Provide a valid contact person",Toast.LENGTH_SHORT).show();
         }
-        else if(TextUtils.isEmpty(phoneEditText.getText().toString())){
-            Toast.makeText(this,"Please Provide Your Phone Number",Toast.LENGTH_SHORT).show();
+        else if(TextUtils.isEmpty(contact) || contact.length() < 11)
+        {
+            Toast.makeText(this, "Please provide valid contact information", Toast.LENGTH_SHORT).show();
         }
         else {
-
-            ConfirmOrder();
+            if(contact.charAt(0) == '0')
+            {
+                if(contact.charAt(1) == '9')
+                {
+                    if(contact.length() > 11)
+                    {
+                        Toast.makeText(this, "Please provide valid contact information", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        ConfirmOrder();
+                    }
+                }
+                else
+                {
+                    Toast.makeText(this, "Please provide valid contact information", Toast.LENGTH_SHORT).show();
+                }
+            }
+            else if(contact.charAt(0) == '6')
+            {
+                if (contact.charAt(1) == '3')
+                {
+                    if(contact.charAt(2) == '9')
+                    {
+                        if(contact.length() != 12)
+                        {
+                            Toast.makeText(this, "Please provide valid contact information", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            ConfirmOrder();
+                        }
+                    }
+                    else
+                    {
+                        Toast.makeText(this, "Please provide valid contact information", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                else
+                {
+                    Toast.makeText(this, "Please provide valid contact information", Toast.LENGTH_SHORT).show();
+                }
+            }
+            else
+            {
+                Toast.makeText(this, "Please provide valid contact information", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

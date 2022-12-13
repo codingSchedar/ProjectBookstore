@@ -62,12 +62,19 @@ public class CartActivity extends AppCompatActivity{
 
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                txtTotalAmount.setText("Total Price = PHP "+String.valueOf(overTotalPrice));
-                Intent intent = new Intent(CartActivity.this,ConfirmFinalOrderActivity.class);
-                intent.putExtra("Total Price", String.valueOf(overTotalPrice));
-                startActivity(intent);
-                finish();
+            public void onClick(View view)
+            {
+                if(recyclerView.getAdapter().getItemCount() == 0)
+                {
+                    Toast.makeText(CartActivity.this, "Please select items to checkout", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    txtTotalAmount.setText("Total Price = PHP " + String.valueOf(overTotalPrice));
+                    Intent intent = new Intent(CartActivity.this, ConfirmFinalOrderActivity.class);
+                    intent.putExtra("Total Price", String.valueOf(overTotalPrice));
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
 

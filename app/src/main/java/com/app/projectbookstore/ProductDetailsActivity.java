@@ -39,6 +39,7 @@ public class ProductDetailsActivity extends AppCompatActivity {
     private NumberPicker numberPicker;
     private Button btnAddToCart;
     private String state = "Unclaimed";
+    private Boolean checkerOfOrder = true;
 
 
     @Override
@@ -73,8 +74,52 @@ public class ProductDetailsActivity extends AppCompatActivity {
 
         btnAddToCart.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                    addToCart();
+            public void onClick(View v)
+            {
+                //check if Orders exist in the database
+                DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+                rootRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.hasChild("Orders"))
+                        {
+                            //check if the user has an existing order
+                            DatabaseReference ordersRef;
+                            ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders").child(Prevalent.currentOnlineUser.getUserID());
+                            ordersRef.addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    if (dataSnapshot.exists()){
+                                        String shippingState = dataSnapshot.child("orderState").getValue().toString();
+                                        String userName = dataSnapshot.child("orderName").getValue().toString();
+                                        if (shippingState.equals("Unclaimed")){
+                                            checkerOfOrder = true;
+                                            Toast.makeText(ProductDetailsActivity.this,"Claim your existing order first",Toast.LENGTH_SHORT).show();
+                                        }
+                                        else
+                                        {
+                                            addToCart();
+                                        }
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) {
+
+                                }
+                            });
+                        }
+                        else
+                        {
+                            addToCart();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
     }

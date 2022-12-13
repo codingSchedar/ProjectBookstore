@@ -60,6 +60,24 @@ public class AdminUserProductsActivity extends AppCompatActivity {
             }
         });
 
+        DatabaseReference usersRef1 = FirebaseDatabase.getInstance().getReference().child("Users");
+
+        usersRef1.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.child(userID).exists())
+                {
+                    Users users = snapshot.child(userID).getValue(Users.class);
+                    pointsToUpdate = users.getUserPoints();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 
     @Override
@@ -99,30 +117,9 @@ public class AdminUserProductsActivity extends AppCompatActivity {
         //updating points of the user who ordered
         DatabaseReference usersRef = FirebaseDatabase.getInstance().getReference().child("Users");
 
-        usersRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists())
-                {
-                    if(snapshot.child(userID).child("userPoints").exists())
-                    {
-                        Users users = snapshot.getValue(Users.class);
-                        pointsToUpdate = users.getUserPoints();
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-
-
-
+        Integer points = pointsToUpdate + (Integer.parseInt(totalPrice)/100);
         HashMap<String, Object> userMap = new HashMap<>();
-        userMap.put("userPoints", pointsToUpdate + Integer.parseInt(totalPrice) / 100);
+        userMap.put("userPoints", points);
         usersRef.child(userID).updateChildren(userMap);
 
         orderRef.child(userID).removeValue();
